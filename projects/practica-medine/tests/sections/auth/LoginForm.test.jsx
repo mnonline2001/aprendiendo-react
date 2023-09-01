@@ -1,5 +1,8 @@
+import {render, screen} from "@testing-library/react";
+
 describe('testing Login Form', function () {
     it('should show the component', function () {
-        expect(1).toBe(1)
+        render()
+        expect(screen.getByAltText("Correo electrónico")).toBeDefined()
     });
 });
