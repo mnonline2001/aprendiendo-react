@@ -1,8 +1,10 @@
 import {render, screen} from "@testing-library/react";
+import {LoginForm} from "../../../src/sections/auth/LoginForm";
+
 
 describe('testing Login Form', function () {
     it('should show the component', function () {
-        render()
-        expect(screen.getByAltText("Correo electrónico")).toBeDefined()
+        render(<LoginForm/>)
+        expect(screen.getByLabelText("Correo electrónico")).toBeDefined()
     });
 });
