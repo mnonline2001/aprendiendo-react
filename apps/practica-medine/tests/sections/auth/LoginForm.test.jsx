@@ -3,12 +3,12 @@ import {LoginForm} from "../../../src/sections/auth/LoginForm";
 
 
 describe('testing Login Form', function () {
-    it('should show the component', function () {
+    it('should show the component', async function () {
         render(<LoginForm/>)
-        expect(screen.getByLabelText("Correo electrónico")).toBeDefined()
-        expect(screen.getByLabelText("Contraseña")).toBeDefined()
+        expect(await screen.findByLabelText(/Correo electrónico/i)).toBeDefined()
+        expect(await screen.findByLabelText(/Contraseña/i)).toBeDefined()
 
-        expect(screen.getByRole( "button", { name: "Iniciar sección" } )).toBeDefined()
+        expect(await screen.findByRole( "button", { name: /Iniciar sección/i } )).toBeDefined()
     });
 });
 
