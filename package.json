@@ -2,5 +2,12 @@
   "name": "aprendiendo-react",
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "homepage": "https://github.com/mnonline2001/aprendiendo-react/tree/master",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": ".mode_modules/standard/slintrc.json"
+  }
 }
