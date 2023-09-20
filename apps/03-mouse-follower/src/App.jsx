@@ -5,6 +5,7 @@ const FollowMouse = () => {
     const [enabled, setEnabled] = useState(false)
     const [position, setPosition] = useState( { x:0, y:0})
 
+    //pointer movw
     useEffect( () => {
         console.log('effect' , { enabled });
         const handleMove = (event) => {
@@ -25,6 +26,20 @@ const FollowMouse = () => {
             console.log('cleanup')
             window.removeEventListener('pointermove', handleMove)//cuando se ejecuta esto?
         }
+    }, [enabled])
+
+    // [] -> solo se ejecuta una vez cuando se monta el componente
+    // [enabled] -> se ejecuta cuando cambia enbled y cuando se monta el componente
+    // undefinned -> se ejecuta cada vez que se renderiza el componente
+
+    //chane body className
+    useEffect( () => {
+        document.body.classList.toggle('no-cursor', enabled)
+
+        return () => {
+            document.body.classList.remove('no-cursor')
+        }
+
     }, [enabled])
 
     return (
